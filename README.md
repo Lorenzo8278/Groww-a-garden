@@ -33,3 +33,15 @@ task.wait(3)
 -- Troca interfaces
 loading:Destroy()
 main.Enabled = true
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local loadingUI = playerGui:WaitForChild("LoadingUI")
+local mainUI = playerGui:WaitForChild("MainUI")
+
+-- Aguarda tudo carregar corretamente
+task.wait(3)  -- tempo de carregamento
+
+-- Troca as interfaces
+loadingUI.Enabled = false
+mainUI.Enabled = true
